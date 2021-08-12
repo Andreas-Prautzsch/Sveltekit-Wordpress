@@ -8,6 +8,8 @@ services:
     build: ./docker/nodejs
     restart: "no"
     entrypoint: sh /bin/entrypoint.sh
+    ports: 
+      - 3000:3000
     volumes:
       - ${APP_PATH}:/var/www/html
       - ./docker/nodejs/entrypoint.sh:/bin/entrypoint.sh
