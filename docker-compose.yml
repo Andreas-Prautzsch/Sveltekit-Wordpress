@@ -8,6 +8,14 @@ services:
     build: ./docker/nodejs
     restart: "no"
     entrypoint: sh /bin/entrypoint.sh
+    environment:
+      - NODE_ENV=development
+    ports: 
+      - 3000:3000
+      - 24678:24678
+    expose: 
+      - 3000
+      - 24678
     volumes:
       - ${APP_PATH}:/var/www/html
       - ./docker/nodejs/entrypoint.sh:/bin/entrypoint.sh
