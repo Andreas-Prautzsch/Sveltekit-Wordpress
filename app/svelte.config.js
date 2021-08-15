@@ -10,10 +10,17 @@ const config = {
 			out: 'build',
 			precompress: false,
 			env: {
-				host: '127.0.0.1',
-				port: '4000'
+				host: '0.0.0.0',
+				port: '3000'
 			}
 		}),
+		vite: () => ({
+			server: {
+				watch: {
+					usePolling: true
+				} 
+			}
+		})
 	}
 };
 
